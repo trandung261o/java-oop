@@ -1,0 +1,10 @@
+package hust.soict.hedspi.aims.media;
+
+public class CompactDisc extends Disc {
+	private String artist;
+	private List<Track> tracks = new ArrayList<Track>();
+	public CompactDisc() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+
+public class Store {
+    private ArrayList<DigitalVideoDisc> itemsInStore = new ArrayList<>();
+
+    public void addDVD(DigitalVideoDisc dvd) {
+        if (dvd != null) {
+            itemsInStore.add(dvd);
+            System.out.println("The DVD \"" + dvd.getTitle() + "\" has been added to the store.");
+        } else {
+            System.out.println("Cannot add a null DVD.");
+        }
+    }
+
+    public void removeDVD(DigitalVideoDisc dvd) {
+        if (dvd != null && itemsInStore.remove(dvd)) {
+            System.out.println("The DVD \"" + dvd.getTitle() + "\" has been removed from the store.");
+        } else {
+            System.out.println("The DVD \"" + (dvd != null ? dvd.getTitle() : "null") + "\" is not found in the store.");
+        }
+    }
+}

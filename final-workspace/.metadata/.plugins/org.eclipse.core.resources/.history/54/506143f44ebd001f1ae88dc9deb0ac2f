@@ -1,0 +1,48 @@
+package hust.soict.hedspi.aims.cart;
+import hust.soict.hedspi.aims.media.DigitalVideoDisc;
+
+public class Cart {
+	public static final int MAX_NUMBERS_ORDERED = 20;
+	private int qtyOrdered = 0;
+	
+	public float totalCost() {
+		float total = 0;
+		for (int i = 0; i < qtyOrdered; i++) {
+			total += itemsOrdered[i].getCost();
+		}
+		return total;
+	}
+	
+	public void print() {
+		System.out.println("***********************CART***********************");
+		System.out.println("Ordered Items: ");
+		
+		float totalCost = 0;
+		for (int i = 0; i < qtyOrdered; i++) {
+			System.out.println((i+1) + ". " + itemsOrdered[i].toString());
+			totalCost += itemsOrdered[i].getCost();
+		}
+		System.out.println("Total cost: " + totalCost);
+		System.out.println("***************************************************");
+	}
+	
+	public DigitalVideoDisc searchById(int id) {
+		for (int i = 0; i < qtyOrdered; i++) {
+			if (itemsOrdered[i].getId() == id) {
+				return itemsOrdered[i];
+			}
+		}
+		System.out.println("No DVD found with ID: " + id);
+		return null;
+	}
+	
+	public DigitalVideoDisc searchByTitle(String title) {
+		for (int i = 0; i < qtyOrdered; i++) {
+			if (itemsOrdered[i].getTitle() == title) {
+				return itemsOrdered[i];
+			}
+		}
+		System.out.println("No DVD found with title: " + title);
+		return null;
+	}
+}

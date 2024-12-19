@@ -1,0 +1,10 @@
+package hust.soict.hedspi.aims.media;
+import java.util.Comparator;
+
+public class MediaComparatorByTitleCost {
+
+	public MediaComparatorByTitleCost() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

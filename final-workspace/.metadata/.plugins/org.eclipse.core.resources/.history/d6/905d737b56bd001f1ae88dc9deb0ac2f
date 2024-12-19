@@ -1,0 +1,70 @@
+package hust.soict.hedspi.aims;
+import java.util.Scanner;
+
+import hust.soict.hedspi.aims.store.Store;
+
+public class Aims {
+	public static void main(String[] args) {
+		Store store = new Store();
+		
+		// Thêm thông tin các phương tiện vào cửa hàng
+        Media dvd1 = new Media("The Lion King", 19.95f);
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Frozen", 14.95f);
+        Book book1 = new Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 12.99f);
+        CompactDisc cd1 = new CompactDisc("Abbey Road", "The Beatles", 9.99f, "Various Artists");
+        CompactDisc cd2 = new CompactDisc("Thriller", "Michael Jackson", 15.99f, "Various Artists");
+
+        // Chèn các phương tiện vào cửa hàng
+        store.addMedia(dvd1);
+        store.addMedia(dvd2);
+        store.addMedia(book1);
+        store.addMedia(cd1);
+        store.addMedia(cd2);
+        
+	    Scanner scanner = new Scanner(System.in);
+	    int choice;
+	    
+	    
+	    do {
+	    	showMenu();
+	    	choice = scanner.nextInt();
+	    	scanner.nextLine();
+	    	
+	    	switch (choice) {
+	    	case 1:
+	    		store.print();
+	    		storeMenu();
+	    	case 0:
+	    		System.out.println("Exiting AIMS application. Goodbye!");
+	    		return;
+	    	default:
+                System.out.println("Invalid choice. Please choose again.");
+	    	}
+	    	
+	    } while (true);
+	}
+	
+	public static void showMenu() {
+		System.out.println("AIMS: ");
+		System.out.println("--------------------------------");
+		System.out.println("1. View store");
+		System.out.println("2. Update store");
+		System.out.println("3. See current cart");
+		System.out.println("0. Exit");
+		System.out.println("--------------------------------");
+		System.out.print("Please choose a number: ");
+	}
+	
+	public static void storeMenu() {
+		System.out.println("Options: ");
+		System.out.println("--------------------------------");
+		System.out.println("1. See a media’s details");
+		System.out.println("2. Add a media to cart");
+		System.out.println("3. Play a media");
+		System.out.println("4. See current cart");
+		System.out.println("0. Back");
+		System.out.println("--------------------------------");
+		System.out.print("Please choose a number: ");
+	}
+
+}

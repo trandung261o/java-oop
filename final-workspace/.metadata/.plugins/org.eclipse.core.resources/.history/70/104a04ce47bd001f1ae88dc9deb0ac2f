@@ -1,0 +1,14 @@
+package hust.soict.hedspi.aims.media;
+
+public class Book {
+	private int id;
+	private String title;
+	private String category;
+	private float cost;
+	private List<String> authours = new ArrayList<>();
+	
+	public Book() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

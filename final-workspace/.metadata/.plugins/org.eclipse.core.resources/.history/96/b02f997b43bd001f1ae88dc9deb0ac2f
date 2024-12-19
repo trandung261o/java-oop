@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+
+public class Store {
+    private ArrayList<DigitalVideoDisc> itemsInStore = new ArrayList<>();
+
+    public void addDVD(DigitalVideoDisc dvd) {
+            itemsInStore.add(dvd);
+            System.out.println("The DVD \"" + dvd.getTitle() + "\" has been added to the store.");
+    }
+
+    public void removeDVD(DigitalVideoDisc dvd) {
+    		itemsInStore.remove(dvd)); 
+            System.out.println("The DVD \"" + dvd.getTitle() + "\" has been removed from the store.");
+        
+    }
+}

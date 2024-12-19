@@ -1,0 +1,19 @@
+package hust.soict.hedspi.aims.store;
+import java.util.ArrayList;
+
+import hust.soict.hedspi.aims.media.DigitalVideoDisc;
+import hust.soict.hedspi.aims.media.Media;
+
+public class Store {
+	private ArrayList<Media> itemsInStore = new ArrayList<Media>();
+
+    public void addDVD(DigitalVideoDisc dvd) {
+            itemsInStore.add(dvd);
+            System.out.println("The DVD \"" + dvd.getTitle() + "\" has been added to the store.");
+    }
+
+    public void removeDVD(DigitalVideoDisc dvd) {
+    		itemsInStore.remove(dvd); 
+            System.out.println("The DVD \"" + dvd.getTitle() + "\" has been removed from the store.");
+    }
+}

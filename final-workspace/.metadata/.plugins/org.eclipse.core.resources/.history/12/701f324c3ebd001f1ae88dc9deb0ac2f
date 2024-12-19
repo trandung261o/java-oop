@@ -1,0 +1,29 @@
+public class TestPassingParameter {
+
+    public static void main(String[] args) {
+        DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
+        DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella");
+
+        swap(jungleDVD, cinderellaDVD);
+
+        System.out.println("Jungle DVD title: " + jungleDVD.getTitle());
+        System.out.println("Cinderella DVD title: " + cinderellaDVD.getTitle());
+
+        changeTitle(jungleDVD, cinderellaDVD.getTitle());
+
+        System.out.println("Jungle DVD title: " + jungleDVD.getTitle());
+    }
+
+    // Phương thức swap (không có tác dụng thực sự do Java truyền tham chiếu giá trị)
+    public static void swap(DigitalVideoDisc o1, DigitalVideoDisc o2) {
+        DigitalVideoDisc tmp = o1;
+        o1 = o2;
+        o2 = tmp;
+    }
+
+    public static void changeTitle(DigitalVideoDisc dvd, String title) {
+        String oldTitle = dvd.getTitle(); // Lưu tiêu đề cũ
+        dvd.setTitle(title);             // Thay đổi tiêu đề thành tiêu đề mới
+        dvd = new DigitalVideoDisc(oldTitle); // Khởi tạo đối tượng mới, nhưng không thay đổi đối tượng ban đầu
+    }
+}
